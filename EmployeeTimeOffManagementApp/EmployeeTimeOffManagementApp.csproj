@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-EmployeeTimeOffManagementApp-54c710b1-4bea-4fba-96ea-b21114f84d57</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true"/>
+        <None Remove="Views\Home\api.http" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Views\Test2\Index3.cshtml.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Views\Test2\Index2.cshtml" />
+      <Content Remove="Views\Test2\Index.cshtml" />
+      <Content Remove="Views\Test2\Index1.cshtml" />
+      <Content Remove="Views\Test2\Index3.cshtml" />
+    </ItemGroup>
+
+</Project>
