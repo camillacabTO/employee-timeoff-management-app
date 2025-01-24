@@ -1,4 +1,4 @@
-@model IEnumerable<EmployeeTimeOffManagementApp.Data.LeaveType>
+@model IEnumerable<LeaveTypesReadOnlyVM>
 
 @{
     ViewData["Title"] = "Index";
@@ -17,9 +17,9 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NumberOfDays)
+                @Html.DisplayNameFor(model => model.Days)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NumberOfDays)
+                @Html.DisplayFor(modelItem => item.Days)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
