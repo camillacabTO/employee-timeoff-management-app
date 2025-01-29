@@ -2,6 +2,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using EmployeeTimeOffManagementApp.Data;
+using EmployeeTimeOffManagementApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+// IOC Container. It's not useable by another classes in the container. It can be injected
+builder.Services.AddScoped<ILeaveTypesServices, LeaveTypesServices>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

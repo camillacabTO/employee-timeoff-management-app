@@ -6,13 +6,12 @@ namespace EmployeeTimeOffManagementApp.Data;
 public class ApplicationDbContext : IdentityDbContext
 {
     // This class represents the DB. List all entities here.
+    // Name of table is pluralized
+    public DbSet<LeaveType> LeaveTypes { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }
-    
-    // Name of table is pluralized
-    public DbSet<LeaveType> LeaveTypes { get; set; }
     public ApplicationDbContext()
     {
     }
