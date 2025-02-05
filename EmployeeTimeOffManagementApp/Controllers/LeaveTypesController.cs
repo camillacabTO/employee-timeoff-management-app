@@ -9,10 +9,12 @@ using Microsoft.EntityFrameworkCore;
 using EmployeeTimeOffManagementApp.Data;
 using EmployeeTimeOffManagementApp.Models.LeaveTypes;
 using EmployeeTimeOffManagementApp.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EmployeeTimeOffManagementApp.Controllers
 {
+    [Authorize(Roles = Roles.Administrator)]
     public class LeaveTypesController(ILeaveTypesServices leaveTypesServices) : Controller
     {
         private readonly ILeaveTypesServices _leaveTypesServices = leaveTypesServices;

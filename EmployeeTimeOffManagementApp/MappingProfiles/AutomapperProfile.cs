@@ -16,6 +16,6 @@ public class AutomapperProfile : Profile
             .ForMember(dest => dest.NumberOfDays, opt => opt.MapFrom(src => src.Days));
 
         CreateMap<LeaveType, LeaveTypesEditVM>()
-            .ForMember(dest => dest.Days, opt => opt.MapFrom(src => src.NumberOfDays));
+            .ForMember(dest => dest.Days, opt => opt.MapFrom(src => src.NumberOfDays)).ReverseMap();
     }
 }
